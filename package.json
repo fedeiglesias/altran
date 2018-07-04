@@ -1,0 +1,42 @@
+{
+  "name": "brastlewark",
+  "version": "1.0.0",
+  "description": "Brastlewark App",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start -p 3070"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fede_iglesiasc@bitbucket.org/fede_iglesiasc/brastlewark.git"
+  },
+  "keywords": [],
+  "author": "Federico Iglesias",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/fede_iglesiasc/brastlewark#readme",
+  "dependencies": {
+    "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
+    "@zeit/next-css": "^0.2.0",
+    "classnames": "latest",
+    "jss": "latest",
+    "lodash": "latest",
+    "next": "latest",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-jss": "latest",
+    "react-nouislider": "^2.0.1",
+    "react-redux": "latest",
+    "redux": "latest",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "latest",
+    "wnumb": "^1.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^0.5.3",
+    "redux-devtools-extension": "^2.13.5"
+  }
+}
