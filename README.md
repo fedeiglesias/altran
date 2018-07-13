@@ -1,11 +1,11 @@
-# A quickstart Project to run Web App
+# Brastlewark
 
 ---
 
 
 ###### INSTALL
 
-* Clone Repository git clone https://fede_iglesiasc@bitbucket.org/fede_iglesiasc/quickstart-webapp.git
+* Clone Repository git clone https://github.com/fedeiglesiasc/brastlewark.git
 * npm run install
 
 
