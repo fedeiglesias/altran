@@ -1,4 +1,29 @@
-# Brastlewark
+# A quickstart Project to run Web App
+
+---
+
+
+###### INSTALL
+
+* Clone Repository git clone https://fede_iglesiasc@bitbucket.org/fede_iglesiasc/quickstart-webapp.git
+* npm run install
+
+
+---
+
+
+###### RUN & FUN
+
+###### For developement
+
+* npm run dev
+* Enter with browser to http://localhost:3000
+
+###### For production
+
+* npm run build
+* npm run start
+* Enter with browser to http://localhost:3070 (you can change this in package.json)
 
 ---
 

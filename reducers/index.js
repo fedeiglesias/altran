@@ -1,12 +1,12 @@
-//Redux
-import { combineReducers } from 'redux'
+// Redux
+import {combineReducers} from 'redux'
 
-//Reducers
+// Reducers
 import InhabitantsReducer from './inhabitantsReducer'
 import FiltersReducer from './filtersReducer'
 
-//Combine reducers and export
+// Combine reducers and export
 export default combineReducers({
-    inhabitants: InhabitantsReducer,
-    filters: FiltersReducer,
+  inhabitants: InhabitantsReducer,
+  filters: FiltersReducer
 })
