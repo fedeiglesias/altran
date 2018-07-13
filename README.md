@@ -5,7 +5,8 @@
 
 ###### INSTALL
 
-* Clone Repository git clone https://github.com/fedeiglesiasc/brastlewark.git
+* git clone https://github.com/fedeiglesiasc/brastlewark.git
+* cd brastlewark
 * npm run install
 
 
