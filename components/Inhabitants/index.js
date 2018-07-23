@@ -114,7 +114,9 @@ class Inhabitants extends React.Component {
     const {classes, data} = this.props
 
     return (
-      <Card className={classes.root}
+      <Card
+        data-id="item"
+        className={classes.root}
         elevation={this.state.hover ? 10 : 1}
         onMouseOver={this.onMouseOver.bind(this)}
         onMouseOut={this.onMouseOut.bind(this)}>
@@ -150,15 +152,5 @@ class Inhabitants extends React.Component {
   }
 }
 
-// State to props
-const mapStateToProps = state => ({
-  state
-})
-
-// Dispatch to Props
-const mapDispatchToProps = dispatch => ({
-  dispatch
-})
-
 // Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Inhabitants))
+export default withStyles(styles)(Inhabitants)

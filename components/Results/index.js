@@ -1,46 +1,14 @@
-// React
 import React from 'react'
-
-// NextJS & MaterialUI
 import {withStyles} from '@material-ui/core/styles'
+import * as at from '../../actions'
+import Inhabitants from '../Inhabitants'
+import styles from './styles'
 
-// Action Types
-import * as at from '../actions'
+export class Results extends React.Component {
 
-// Own components
-import Inhabitants from './Inhabitants'
-
-// Styles
-const styles = theme => ({
-  root: {
-    flexDirection: 'row',
-    display: 'flex',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start'
-  },
-
-  item: {
-    '@media (min-width: 870px)': {
-      maxWidth: 'calc(100% * (1/2) - 14px - 1px)'
-    }
-  }
-})
-
-@withStyles(styles)
-export default class Results extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.componentDidMount.bind(this)
-    this.matchAge.bind(this)
-    this.matchWeight.bind(this)
-    this.matchHeight.bind(this)
-    this.matchHair.bind(this)
-    this.loadMore.bind(this)
-  }
 
   componentDidMount(){
-    if(window){ window.addEventListener('scroll', this.loadMore) }
+    if(window){ window.addEventListener('scroll', this.loadMore.bind(this)) }
   }
 
   componentWillUnmountcomponentDidMount(){
@@ -126,7 +94,6 @@ export default class Results extends React.Component {
 
   render(){
     const {classes} = this.props
-
     return (
       <div className={classes.root}>
         { this.renderItems() }
@@ -134,3 +101,5 @@ export default class Results extends React.Component {
     )
   }
 }
+
+export default withStyles(styles)(Results)

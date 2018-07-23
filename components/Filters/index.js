@@ -30,22 +30,6 @@ import styles from './styles'
 
 // Component
 class FiltersPanel extends React.Component{
-  static getInitialProps({reduxStore, req}){
-    return{}
-  }
-
-  constructor(props){
-    super(props)
-
-    // Bindings
-    this.onHairChange.bind(this)
-    this.onProfessionChange.bind(this)
-
-    // Render Selected Filters
-    this.renderHairSelected.bind(this)
-    this.renderProfessionSelected.bind(this)
-  }
-
   onAgeChange(value){
     const {dispatch} = this.props
     dispatch({
@@ -176,7 +160,8 @@ class FiltersPanel extends React.Component{
           state.filters.professions.options.map(item =>
             <Typography
               onClick={() => this.onProfessionChange(item)}
-              className={classes.optionFilterItem}>{item}</Typography>
+              className={classes.optionFilterItem}
+              key={item}>{item}</Typography>
           )
         }
       </div>
@@ -195,7 +180,8 @@ class FiltersPanel extends React.Component{
           state.filters.hair.options.map(item =>
             <Typography
               onClick={() => this.onHairChange(item)}
-              className={classes.optionFilterItem}>
+              className={classes.optionFilterItem}
+              key={item}>
               {item}
             </Typography>)
         }
@@ -268,15 +254,5 @@ class FiltersPanel extends React.Component{
   }
 }
 
-// State to props
-const mapStateToProps = state =>({
-  state
-})
-
-// Dispatch to Props
-const mapDispatchToProps = dispatch =>({
-  dispatch
-})
-
 // Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(FiltersPanel))
+export default withStyles(styles)(FiltersPanel)

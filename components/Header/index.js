@@ -111,7 +111,9 @@ class Header extends React.Component {
             }
           </div>
 
-          <Search />
+          <Search
+            state={this.props.state}
+            dispatch={this.props.dispatch}/>
 
           <Hidden smDown implementation="css">{rightLinks}</Hidden>
           {

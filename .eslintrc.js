@@ -4,10 +4,7 @@ module.exports = {
     "plugins": ["react"],
     "env": {
         "node": true,
-        "mocha": true,
         "es6": true,
-        "jquery": true,
-        "phantomjs": true
     },
     "globals": {
         "describe": false,
@@ -22,7 +19,7 @@ module.exports = {
         "curly": "error",
         "eol-last": "error",
         "indent": ["error", 2, { "SwitchCase": 1 }],
-        "max-len": ["error", {"code": 100, "tabWidth": 1, "ignoreUrls": false}],
+        "max-len": ["error", {"code": 140, "tabWidth": 1, "ignoreUrls": false}],
         "no-console": "warn",
         "no-multi-spaces": "warn",
         "no-trailing-spaces": "error",
@@ -31,7 +28,6 @@ module.exports = {
         "no-unreachable": "error",
         "no-unused-vars": "warn",
         "no-useless-concat": "warn",
-        "object-curly-spacing": "error",
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
         "quotes": ["error", "single", {"avoidEscape": true, "allowTemplateLiterals": true}],
@@ -42,4 +38,3 @@ module.exports = {
         "experimentalDecorators": true
     }
 };
-

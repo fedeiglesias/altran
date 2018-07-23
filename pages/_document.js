@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import flush from 'styled-jsx/server'
 
 class MyDocument extends Document {
-  render () {
+  render(){
     const { pageContext } = this.props
     return (
       <html lang="en" dir="ltr">
@@ -40,24 +40,6 @@ class MyDocument extends Document {
 }
 
 MyDocument.getInitialProps = ctx => {
-  // Resolution order
-  //
-  // On the server:
-  // 1. page.getInitialProps
-  // 2. document.getInitialProps
-  // 3. page.render
-  // 4. document.render
-  //
-  // On the server with error:
-  // 2. document.getInitialProps
-  // 3. page.render
-  // 4. document.render
-  //
-  // On the client
-  // 1. page.getInitialProps
-  // 3. page.render
-
-  // Render app and page and get the context of the page with collected side effects.
   let pageContext
   const page = ctx.renderPage(Component => {
     const WrappedComponent = props => {

@@ -1,7 +1,22 @@
 {
-	"presets": ["next/babel"],
-	"plugins": [
-    "inline-react-svg", 
-    "transform-decorators-legacy"
-  ]
+  "env": {
+    "development": {
+      "presets": ["next/babel"],
+      "plugins": [
+        "inline-react-svg"
+      ]
+    },
+    "production": {
+      "presets": ["next/babel"],
+      "plugins": [
+        "inline-react-svg"
+      ]
+    },
+    "test": {
+      "presets": ["react", "env", "stage-0"],
+      "plugins": [
+        "inline-react-svg"
+      ]
+    }
   }
+}

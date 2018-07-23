@@ -8,9 +8,9 @@ class Parallax extends React.Component{
   constructor(props){
     super(props)
 
-    this.fromBrowser = false
+    this.fromBrowser = true
     if(typeof(window) === 'undefined'){
-      this.fromBrowser = true
+      this.fromBrowser = false
     }
 
     let windowScrollTop = 0
