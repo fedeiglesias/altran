@@ -190,4 +190,4 @@ export default (theme) => ({
     fontWeight: 300,
     color: '#5e5e5e'
   }
-})
+});

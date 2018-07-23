@@ -1,79 +1,77 @@
 // React
-import React from 'react'
+import React from 'react';
 
 // Redux
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
 // NextJS & MaterialUI
-import {withStyles} from '@material-ui/core/styles'
+import {withStyles} from '@material-ui/core/styles';
 
 // Material UI
-import {Typography} from '@material-ui/core'
-import Avatar from '@material-ui/core/Avatar'
-import Chip from '@material-ui/core/Chip'
+import {Typography} from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
+import Chip from '@material-ui/core/Chip';
 
 // Slider Component
-import Nouislider from 'react-nouislider'
-import wNumb from 'wnumb'
-import '../../static/css/nouislider.css'
-
-// Icons
-import FaceIcon from '@material-ui/icons/Face'
-import CloseIcon from '@material-ui/icons/Close'
-import Profesion from '../../static/img/icons/worker.svg'
+import Nouislider from 'react-nouislider';
+import wNumb from 'wnumb';
+import '../../static/css/nouislider.css';
+import FaceIcon from '@material-ui/icons/Face';
+import CloseIcon from '@material-ui/icons/Close';
+import Profesion from '../../static/img/icons/worker.svg';
 
 // Actions
-import * as actionTypes from '../../actions'
+import * as actionTypes from '../../actions';
 
 // Styles
-import styles from './styles'
+import styles from './styles';
 
 // Component
 class FiltersPanel extends React.Component{
   onAgeChange(value){
-    const {dispatch} = this.props
+    const {dispatch} = this.props;
     dispatch({
       type: actionTypes.FILTERS_SET_AGE,
       from: parseInt(value[0]),
       to: parseInt(value[1])
-    })
+    });
   }
 
   onHeightChange(value){
-    const {dispatch} = this.props
+    const {dispatch} = this.props;
     dispatch({
       type: actionTypes.FILTERS_SET_HEIGHT,
       from: parseFloat(value[0]),
       to: parseFloat(value[1])
-    })
+    });
   }
 
   onWeightChange(value){
-    const {dispatch} = this.props
+    const {dispatch} = this.props;
     dispatch({
       type: actionTypes.FILTERS_SET_WEIGHT,
       from: parseFloat(value[0]),
       to: parseFloat(value[1])
-    })
+    });
   }
 
   onHairChange(value){
-    const {dispatch} = this.props
-    dispatch({type: actionTypes.FILTERS_SET_HAIR, hair: value})
+    const {dispatch} = this.props;
+    dispatch({type: actionTypes.FILTERS_SET_HAIR, hair: value});
   }
 
   onProfessionChange(profession){
-    const {dispatch} = this.props
-    dispatch({type: actionTypes.FILTERS_SET_PROFESSION, profession: profession})
+    const {dispatch} = this.props;
+    dispatch({type: actionTypes.FILTERS_SET_PROFESSION, profession: profession});
   }
 
   renderAgeFilter(){
-    const{classes, state} = this.props
+    const{classes, state} = this.props;
 
-    let max = 100
-    let min = 0
-    let from = min
-    let to = max
+    let max = 100;
+    let min = 0;
+    let from = min;
+    let to = max;
     if(state.filters.age.max){ max = state.filters.age.max }
     if(state.filters.age.min){ min = state.filters.age.min }
     if(state.filters.age.selectFrom){ from = state.filters.age.selectFrom }
@@ -91,16 +89,16 @@ class FiltersPanel extends React.Component{
           format={wNumb({decimals: 0, thousand: '', suffix: ''})}
           tooltips onChange={this.onAgeChange.bind(this)}/>
       </div>
-    )
+    );
   }
 
   renderHeightFilter(){
-    const{classes, state} = this.props
+    const{classes, state} = this.props;
 
-    let max = 100
-    let min = 0
-    let from = min
-    let to = max
+    let max = 100;
+    let min = 0;
+    let from = min;
+    let to = max;
     if(state.filters.height.max){ max = state.filters.height.max }
     if(state.filters.height.min){ min = state.filters.height.min }
     if(state.filters.height.selectFrom){ from = state.filters.height.selectFrom }
@@ -118,16 +116,16 @@ class FiltersPanel extends React.Component{
           format={wNumb({decimals: 2, thousand: '', suffix: ''})}
           tooltips onChange={this.onHeightChange.bind(this)}/>
       </div>
-    )
+    );
   }
 
   renderWeightFilter(){
-    const{classes, state} = this.props
+    const{classes, state} = this.props;
 
-    let max = 100
-    let min = 0
-    let from = min
-    let to = max
+    let max = 100;
+    let min = 0;
+    let from = min;
+    let to = max;
     if(state.filters.weight.max){ max = state.filters.weight.max }
     if(state.filters.weight.min){ min = state.filters.weight.min }
     if(state.filters.weight.selectFrom){ from = state.filters.weight.selectFrom }
@@ -144,11 +142,11 @@ class FiltersPanel extends React.Component{
           format={wNumb({decimals: 2, thousand: '', suffix: ''})}
           tooltips onChange={this.onWeightChange.bind(this)}/>
       </div>
-    )
+    );
   }
 
   renderProfessionFilter(){
-    const{classes, state} = this.props
+    const{classes, state} = this.props;
 
     // Hide if not filter applied
     if(state.filters.professions.selected !== ''){ return null }
@@ -165,11 +163,11 @@ class FiltersPanel extends React.Component{
           )
         }
       </div>
-    )
+    );
   }
 
   renderHairFilter(){
-    const{classes, state} = this.props
+    const{classes, state} = this.props;
 
     if(state.filters.hair.selected !== ''){ return }
 
@@ -186,11 +184,11 @@ class FiltersPanel extends React.Component{
             </Typography>)
         }
       </div>
-    )
+    );
   }
 
   renderHairSelected(){
-    const{classes, state} = this.props
+    const{classes, state} = this.props;
     if(state.filters.hair.selected === ''){ return null }
     return <Chip
       avatar={<Avatar className={classes.avatar}><FaceIcon /></Avatar>}
@@ -199,12 +197,11 @@ class FiltersPanel extends React.Component{
       onClick={() =>{ this.onHairChange('') }}
       onDelete={() =>{ this.onHairChange('') }}
       className={classes.chip}
-      classes={{root: classes.chipRoot, label: classes.chipLabel} }/>
+      classes={{root: classes.chipRoot, label: classes.chipLabel} }/>;
   }
 
   renderProfessionSelected(){
-    const{classes, state} = this.props
-    // Hide if filter applied
+    const{classes, state} = this.props;
 
     if(state.filters.professions.selected === ''){ return true }
     return <Chip
@@ -214,11 +211,11 @@ class FiltersPanel extends React.Component{
       onClick={() =>{ this.onProfessionChange('') }}
       onDelete={() =>{ this.onProfessionChange('') }}
       className={classes.chip}
-      classes={{root: classes.chipRoot, label: classes.chipLabel} }/>
+      classes={{root: classes.chipRoot, label: classes.chipLabel} }/>;
   }
 
   render(){
-    const {classes, state} = this.props
+    const {classes, state} = this.props;
     return(
       <div className={classes.root}>
         <Typography variant="title" className={classes.title}>
@@ -250,9 +247,9 @@ class FiltersPanel extends React.Component{
           {this.renderHairFilter()}
         </div>
       </div>
-    )
+    );
   }
 }
 
 // Connect everything
-export default withStyles(styles)(FiltersPanel)
+export default withStyles(styles)(FiltersPanel);

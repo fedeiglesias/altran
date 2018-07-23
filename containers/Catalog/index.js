@@ -4,20 +4,20 @@ import {connect} from 'react-redux';
 import {withStyles} from '@material-ui/core/styles';
 
 // Material UI
-import Button from '@material-ui/core/Button'
-import Modal from '@material-ui/core/Modal'
+import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
 
 // Icons
-import FilterIcon from '../../static/img/icons/filter.svg'
+import FilterIcon from '../../static/img/icons/filter.svg';
 
 // Own components
 import Parallax from '../../components/Parallax';
 import Header from '../../components/Header';
 import HeaderLinks from '../../components/HeaderLinks';
 import Footer from '../../components/Footer';
-import styles from './styles'
-import Filters from '../../components/Filters/index'
-import Results from '../../components/Results'
+import styles from './styles';
+import Filters from '../../components/Filters/index';
+import Results from '../../components/Results';
 
 import MediaQuery from 'react-responsive';
 import * as actions from '../../actions/inhabitantsActions';
@@ -25,18 +25,18 @@ import * as actions from '../../actions/inhabitantsActions';
 export class Catalog extends React.Component {
 
   constructor(props) {
-    super(props)
-    this.state = {openModal: false}
-    this.mobileFilters.bind(this)
+    super(props);
+    this.state = {openModal: false};
+    this.mobileFilters.bind(this);
   }
 
   componentWillMount() {
     // Get first data
-    this.props.dispatch(actions.getInhabitants())
+    this.props.dispatch(actions.getInhabitants());
   }
 
   mobileFilters() {
-    const { classes } = this.props
+    const { classes } = this.props;
 
     return(
       <MediaQuery maxWidth={600} component="div">
@@ -56,11 +56,11 @@ export class Catalog extends React.Component {
           </div>
         </Modal>
       </MediaQuery>
-    )
+    );
   }
 
   desktopFilters() {
-    const { classes } = this.props
+    const { classes } = this.props;
 
     return(
       <MediaQuery minWidth={600} component="div">
@@ -69,7 +69,7 @@ export class Catalog extends React.Component {
           dispatch={this.props.dispatch}
           className={classes.filterPanel}/>
       </MediaQuery>
-    )
+    );
   }
 
   render() {
@@ -100,7 +100,7 @@ export class Catalog extends React.Component {
 
         <Footer/>
       </div>
-    )
+    );
   }
 }
 
@@ -110,14 +110,14 @@ export class Catalog extends React.Component {
 // State to props
 const mapStateToProps = state =>({
   state
-})
+});
 
 // Dispatch to Props
 const mapDispatchToProps = dispatch =>({
   dispatch
-})
+});
 
 // Connect everything
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Catalog))
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Catalog));
 
 

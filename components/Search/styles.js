@@ -56,4 +56,4 @@ export default theme => ({
     width: 20,
     height: 20
   }
-})
+});

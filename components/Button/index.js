@@ -1,9 +1,9 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
-import withStyles from '@material-ui/core/styles/withStyles'
-import Button from '@material-ui/core/Button'
-import buttonStyle from './style'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+import withStyles from '@material-ui/core/styles/withStyles';
+import Button from '@material-ui/core/Button';
+import buttonStyle from './style';
 
 function RegularButton({...props}) {
   const {
@@ -20,7 +20,7 @@ function RegularButton({...props}) {
     justIcon,
     className,
     ...rest
-  } = props
+  } = props;
 
   const btnClasses = classNames({
     [classes.button]: true,
@@ -34,13 +34,13 @@ function RegularButton({...props}) {
     [classes.link]: link,
     [classes.justIcon]: justIcon,
     [className]: className
-  })
+  });
 
   return (
     <Button {...rest} className={btnClasses}>
       {children}
     </Button>
-  )
+  );
 }
 
 RegularButton.propTypes = {
@@ -67,6 +67,6 @@ RegularButton.propTypes = {
   block: PropTypes.bool,
   link: PropTypes.bool,
   justIcon: PropTypes.bool
-}
+};
 
-export default withStyles(buttonStyle)(RegularButton)
+export default withStyles(buttonStyle)(RegularButton);

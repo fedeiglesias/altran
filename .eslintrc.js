@@ -35,6 +35,7 @@ module.exports = {
         "space-infix-ops": "error",
         "spaced-comment": "error",
         "strict": "warn",
+        "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
         "experimentalDecorators": true
     }
 };

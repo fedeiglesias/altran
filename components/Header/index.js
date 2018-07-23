@@ -1,66 +1,66 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 // Material UI
-import withStyles from '@material-ui/core/styles/withStyles'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import Button from '@material-ui/core/Button'
-import Hidden from '@material-ui/core/Hidden'
-import Drawer from '@material-ui/core/Drawer'
+import withStyles from '@material-ui/core/styles/withStyles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
+import Drawer from '@material-ui/core/Drawer';
 
 // Icons
-import Menu from '@material-ui/icons/Menu'
+import Menu from '@material-ui/icons/Menu';
 
 // Components
-import style from './style'
+import style from './style';
 
 // Own components
-import Search from '../Search/'
+import Search from '../Search/';
 
 class Header extends React.Component {
   constructor(props){
-    super(props)
-    this.state = {mobileOpen: false}
-    this.handleDrawerToggle = this.handleDrawerToggle.bind(this)
-    this.headerColorChange = this.headerColorChange.bind(this)
+    super(props);
+    this.state = {mobileOpen: false};
+    this.handleDrawerToggle = this.handleDrawerToggle.bind(this);
+    this.headerColorChange = this.headerColorChange.bind(this);
   }
 
   handleDrawerToggle(){
-    this.setState({mobileOpen: !this.state.mobileOpen})
+    this.setState({mobileOpen: !this.state.mobileOpen});
   }
 
   componentDidMount(){
     if(this.props.changeColorOnScroll){
-      window.addEventListener('scroll', this.headerColorChange)
+      window.addEventListener('scroll', this.headerColorChange);
     }
   }
 
   headerColorChange(){
-    const {classes, color, changeColorOnScroll} = this.props
-    const windowsScrollTop = window.pageYOffset
+    const {classes, color, changeColorOnScroll} = this.props;
+    const windowsScrollTop = window.pageYOffset;
     if (windowsScrollTop > changeColorOnScroll.height){
       document.body
         .getElementsByTagName('header')[0]
-        .classList.remove(classes[color])
+        .classList.remove(classes[color]);
       document.body
         .getElementsByTagName('header')[0]
-        .classList.add(classes[changeColorOnScroll.color])
+        .classList.add(classes[changeColorOnScroll.color]);
     } else {
       document.body
         .getElementsByTagName('header')[0]
-        .classList.add(classes[color])
+        .classList.add(classes[color]);
       document.body
         .getElementsByTagName('header')[0]
-        .classList.remove(classes[changeColorOnScroll.color])
+        .classList.remove(classes[changeColorOnScroll.color]);
     }
   }
 
   componentWillUnmount(){
     if (this.props.changeColorOnScroll){
-      window.removeEventListener('scroll', this.headerColorChange)
+      window.removeEventListener('scroll', this.headerColorChange);
     }
   }
 
@@ -71,22 +71,22 @@ class Header extends React.Component {
           onClick={this.handleDrawerToggle}><Menu/>
         </IconButton>
       </Hidden>
-    )
+    );
   }
 
   render(){
-    const {classes, color, rightLinks, leftLinks, brand, fixed, absolute} = this.props
+    const {classes, color, rightLinks, leftLinks, brand, fixed, absolute} = this.props;
     const appBarClasses = classNames({
       [classes.appBar]: true,
       [classes[color]]: color,
       [classes.absolute]: absolute,
       [classes.fixed]: fixed
-    })
+    });
     const brandComponent = (
       <Button className={classes.title}>
         {brand}
       </Button>
-    )
+    );
 
     return (
       <AppBar className={appBarClasses}>
@@ -136,14 +136,14 @@ class Header extends React.Component {
           </Drawer>
         </Hidden>
       </AppBar>
-    )
+    );
   }
 }
 
 Header.defaultProp = {
   color: 'white',
   menuButton: 'left'
-}
+};
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
@@ -184,6 +184,6 @@ Header.propTypes = {
       'dark']).isRequired,
     alpha: PropTypes.string
   })
-}
+};
 
-export default withStyles(style)(Header)
+export default withStyles(style)(Header);

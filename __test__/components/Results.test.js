@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Results from '../../components/Results';
-import Inhabitants from '../../components/Inhabitants'
+import Inhabitants from '../../components/Inhabitants';
 import { createShallow } from '@material-ui/core/test-utils';
 
 
@@ -82,8 +82,8 @@ describe('Results', () => {
           }
         }
       }
-    }
-  })
+    };
+  });
 
   let shallow;
 
@@ -95,6 +95,6 @@ describe('Results', () => {
     const wrapper = shallow(<Results {...props}/>);
     expect(wrapper.dive().find(Inhabitants).length).toBe(3);
   });
-})
+});
 
 

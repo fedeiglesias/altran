@@ -76,4 +76,4 @@ export default theme => ({
     right: 35,
     zIndex: 11000
   },
-})
+});

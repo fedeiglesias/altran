@@ -1,8 +1,8 @@
 import {defaultFont} from '../style';
 
-import tooltip from '../Tooltip/style'
+import tooltip from '../Tooltip/style';
 
-const headerLinksStyle = theme => ({
+export default theme => ({
   list: {
     ...defaultFont,
     fontSize: '14px',
@@ -115,5 +115,3 @@ const headerLinksStyle = theme => ({
     marginRight: '5px'
   }
 });
-
-export default headerLinksStyle

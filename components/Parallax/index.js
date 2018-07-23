@@ -1,30 +1,30 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import withStyles from '@material-ui/core/styles/withStyles'
-import classNames from 'classnames'
-import parallaxStyle from './style'
+import React from 'react';
+import PropTypes from 'prop-types';
+import withStyles from '@material-ui/core/styles/withStyles';
+import classNames from 'classnames';
+import parallaxStyle from './style';
 
 class Parallax extends React.Component{
   constructor(props){
-    super(props)
+    super(props);
 
-    this.fromBrowser = true
+    this.fromBrowser = true;
     if(typeof(window) === 'undefined'){
-      this.fromBrowser = false
+      this.fromBrowser = false;
     }
 
-    let windowScrollTop = 0
+    let windowScrollTop = 0;
     if(this.fromBrowser){ windowScrollTop = window.pageYOffset / 3 }
 
-    this.state = {transform: 'translate3d(0,' + windowScrollTop + 'px,0)'}
-    this.resetTransform = this.resetTransform.bind(this)
+    this.state = {transform: 'translate3d(0,' + windowScrollTop + 'px,0)'};
+    this.resetTransform = this.resetTransform.bind(this);
   }
 
   componentDidMount(){
-    let windowScrollTop = 0
+    let windowScrollTop = 0;
     if(this.fromBrowser){ windowScrollTop = window.pageYOffset / 3 }
 
-    this.setState({transform: 'translate3d(0,' + windowScrollTop + 'px,0)'})
+    this.setState({transform: 'translate3d(0,' + windowScrollTop + 'px,0)'});
     if(this.fromBrowser){ window.addEventListener('scroll', this.resetTransform) }
   }
 
@@ -33,9 +33,9 @@ class Parallax extends React.Component{
   }
 
   resetTransform(){
-    let windowScrollTop = 0
+    let windowScrollTop = 0;
     if(this.fromBrowser){ windowScrollTop = window.pageYOffset / 3 }
-    this.setState({transform: 'translate3d(0,' + windowScrollTop + 'px,0)'})
+    this.setState({transform: 'translate3d(0,' + windowScrollTop + 'px,0)'});
   }
 
   render(){
@@ -47,7 +47,7 @@ class Parallax extends React.Component{
       image,
       small,
       innerShadowBottom,
-      innerShadowTop} = this.props
+      innerShadowTop} = this.props;
 
     const parallaxClasses = classNames({
       [classes.parallax]: true,
@@ -56,7 +56,7 @@ class Parallax extends React.Component{
       [className]: className !== undefined,
       [classes.innerShadowBottom]: innerShadowBottom,
       [classes.innerShadowTop]: innerShadowTop
-    })
+    });
 
     return(
       <div
@@ -69,7 +69,7 @@ class Parallax extends React.Component{
         ref='parallax'>
         {children}
       </div>
-    )
+    );
   }
 }
 
@@ -82,6 +82,6 @@ Parallax.propTypes = {
   children: PropTypes.node,
   style: PropTypes.object,
   image: PropTypes.string
-}
+};
 
-export default withStyles(parallaxStyle)(Parallax)
+export default withStyles(parallaxStyle)(Parallax);

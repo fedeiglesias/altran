@@ -1,4 +1,4 @@
-import * as at from '../actions'
+import * as at from '../actions';
 
 const initialState = {
   name: '',
@@ -28,7 +28,7 @@ const initialState = {
     selected: '',
     options: []
   }
-}
+};
 
 // Default reducer
 export default (state = initialState, action) => {
@@ -59,17 +59,17 @@ export default (state = initialState, action) => {
           min: action.data.ageMin,
           max: action.data.ageMax
         }
-      }
+      };
 
     case at.FILTERS_CREATE:
-      action.data.name = state.name
-      return action.data
+      action.data.name = state.name;
+      return action.data;
 
     case at.FILTERS_SEARCH:
       return {
         ...state,
         name: action.query
-      }
+      };
 
     case at.FILTERS_SET_AGE:
       return {
@@ -79,7 +79,7 @@ export default (state = initialState, action) => {
           selectFrom: action.from,
           selectTo: action.to
         }
-      }
+      };
 
     case at.FILTERS_SET_WEIGHT:
       return {
@@ -89,7 +89,7 @@ export default (state = initialState, action) => {
           selectFrom: action.from,
           selectTo: action.to
         }
-      }
+      };
 
     case at.FILTERS_SET_HEIGHT:
       return {
@@ -99,7 +99,7 @@ export default (state = initialState, action) => {
           selectFrom: action.from,
           selectTo: action.to
         }
-      }
+      };
 
     case at.FILTERS_SET_PROFESSION:
       return {
@@ -108,7 +108,7 @@ export default (state = initialState, action) => {
           ...state.professions,
           selected: action.profession
         }
-      }
+      };
 
     case at.FILTERS_SET_HAIR:
       return {
@@ -117,9 +117,9 @@ export default (state = initialState, action) => {
           ...state.hair,
           selected: action.hair
         }
-      }
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};

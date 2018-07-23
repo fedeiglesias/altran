@@ -12,7 +12,7 @@ describe('Footer', () => {
   });
 
   it('should render anchor with Name', () => {
-    const wrap = shallow(<Footer/>)
-    expect(wrap.dive().find('a').text()).toBe('Federico Iglesias')
-  })
-})
+    const wrap = shallow(<Footer/>);
+    expect(wrap.dive().find('a').text()).toBe('Federico Iglesias');
+  });
+});

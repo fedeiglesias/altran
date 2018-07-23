@@ -1,60 +1,60 @@
 // React
-import React from 'react'
+import React from 'react';
 
 // Redux
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
 // NextJS & MaterialUI
-import {withStyles} from '@material-ui/core/styles'
+import {withStyles} from '@material-ui/core/styles';
 
 // Material UI
-import Card from '@material-ui/core/Card'
-import {Typography} from '@material-ui/core'
-import Avatar from '@material-ui/core/Avatar'
+import Card from '@material-ui/core/Card';
+import {Typography} from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
 
 // Icons
-import ToolsIcon from '../../static/img/icons/worker_construction.svg'
-import FriendsIcon from '../../static/img/icons/friends.svg'
-import IdentifyIcon from '../../static/img/icons/info.svg'
-import FaceIcon from '@material-ui/icons/Face'
+import ToolsIcon from '../../static/img/icons/worker_construction.svg';
+import FriendsIcon from '../../static/img/icons/friends.svg';
+import IdentifyIcon from '../../static/img/icons/info.svg';
+import FaceIcon from '@material-ui/icons/Face';
 
 // Styles
-import styles from './styles'
+import styles from './styles';
 
 class Inhabitants extends React.Component {
   static getInitialProps({reduxStore, req}) {
-    return {}
+    return {};
   }
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       hover: false,
       tab: 1
-    }
+    };
 
-    this.renderProfession.bind(this)
-    this.renderProfile.bind(this)
-    this.renderFriends.bind(this)
+    this.renderProfession.bind(this);
+    this.renderProfile.bind(this);
+    this.renderFriends.bind(this);
   }
 
   onMouseOver(){
-    this.setState({hover: true})
+    this.setState({hover: true});
   }
 
   onMouseOut(){
-    this.setState({hover: false})
+    this.setState({hover: false});
   }
 
   onTabClick(tab) {
-    this.setState({tab: tab})
+    this.setState({tab: tab});
   }
 
   renderProfile(){
     if(this.state.tab !== 1){ return }
 
-    const {classes, data} = this.props
+    const {classes, data} = this.props;
 
     return (
       <div className={classes.generalInfo}>
@@ -71,13 +71,13 @@ class Inhabitants extends React.Component {
           <b className={classes.dataLabel}>Hair</b> {data.hair_color}
         </Typography>
       </div>
-    )
+    );
   }
 
   renderProfession(){
     if(this.state.tab !== 2){ return }
 
-    const {classes, data} = this.props
+    const {classes, data} = this.props;
     if(!data.professions.length){ return null }
 
     return (
@@ -87,13 +87,13 @@ class Inhabitants extends React.Component {
             {item}
           </Typography>)}
       </div>
-    )
+    );
   }
 
   renderFriends(){
     if (this.state.tab !== 3){ return }
 
-    const {classes, data} = this.props
+    const {classes, data} = this.props;
     if(!data.friends.length){ return null }
 
     return (
@@ -107,11 +107,11 @@ class Inhabitants extends React.Component {
           </div>
         )}
       </div>
-    )
+    );
   }
 
   render(){
-    const {classes, data} = this.props
+    const {classes, data} = this.props;
 
     return (
       <Card
@@ -148,9 +148,9 @@ class Inhabitants extends React.Component {
           {this.renderFriends()}
         </div>
       </Card>
-    )
+    );
   }
 }
 
 // Connect everything
-export default withStyles(styles)(Inhabitants)
+export default withStyles(styles)(Inhabitants);

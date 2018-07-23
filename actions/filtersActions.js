@@ -1,20 +1,20 @@
-import * as actionTypes from './index'
-import {cloneDeep} from 'lodash'
+import * as actionTypes from './index';
+import {cloneDeep} from 'lodash';
 
 export const createFilters = (mode) => (dispatch, getState) => {
-  const state = getState()
-  let items = state.inhabitants.display
+  const state = getState();
+  let items = state.inhabitants.display;
 
-  let f = cloneDeep(state.filters)
+  let f = cloneDeep(state.filters);
 
-  f.age.min = null
-  f.age.max = null
-  f.weight.min = null
-  f.weight.max = null
-  f.height.min = null
-  f.height.max = null
-  f.hair.options = []
-  f.professions.options = []
+  f.age.min = null;
+  f.age.max = null;
+  f.weight.min = null;
+  f.weight.max = null;
+  f.height.min = null;
+  f.height.max = null;
+  f.hair.options = [];
+  f.professions.options = [];
 
   for (var i in items) {
     // Initialize
@@ -37,27 +37,27 @@ export const createFilters = (mode) => (dispatch, getState) => {
 
     if(items[i].hair_color){
       if(f.hair.options.indexOf(items[i].hair_color) === -1){
-        f.hair.options.push(items[i].hair_color)
+        f.hair.options.push(items[i].hair_color);
       }
     }
 
     for (let x in items[i].professions){
       if(f.professions.options.indexOf(items[i].professions[x]) === -1){
-        f.professions.options.push(items[i].professions[x])
+        f.professions.options.push(items[i].professions[x]);
       }
     }
   }
 
   if(mode === 'create'){
-    f.age.selectFrom = f.age.min
-    f.age.selectTo = f.age.max
-    f.weight.selectFrom = f.weight.min
-    f.weight.selectTo = f.weight.max
-    f.height.selectFrom = f.height.min
-    f.height.selectTo = f.height.max
-    f.professions.selected = ''
-    f.hair.selected = ''
+    f.age.selectFrom = f.age.min;
+    f.age.selectTo = f.age.max;
+    f.weight.selectFrom = f.weight.min;
+    f.weight.selectTo = f.weight.max;
+    f.height.selectFrom = f.height.min;
+    f.height.selectTo = f.height.max;
+    f.professions.selected = '';
+    f.hair.selected = '';
   }
 
-  dispatch({type: actionTypes.FILTERS_CREATE, data: f})
-}
+  dispatch({type: actionTypes.FILTERS_CREATE, data: f});
+};

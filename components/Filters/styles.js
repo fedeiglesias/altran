@@ -97,4 +97,4 @@ export default (theme) => ({
       color: '#00b9e6',
     }
   },
-})
+});

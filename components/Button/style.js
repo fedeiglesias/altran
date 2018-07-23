@@ -5,7 +5,7 @@ import {
   infoColor,
   successColor,
   warningColor,
-  dangerColor} from '../style'
+  dangerColor} from '../style';
 
 export default {
   button: {
@@ -363,4 +363,4 @@ export default {
       }
     }
   }
-}
+};

@@ -1,4 +1,4 @@
-const tooltipsStyle = {
+export default {
   tooltip: {
     padding: '10px 15px',
     minWidth: '130px',
@@ -26,6 +26,4 @@ const tooltipsStyle = {
     whiteSpace: 'normal',
     lineBreak: 'auto'
   }
-}
-
-export default tooltipsStyle
+};

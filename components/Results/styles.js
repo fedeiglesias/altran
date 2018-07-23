@@ -12,4 +12,4 @@ export default theme => ({
       maxWidth: 'calc(100% * (1/2) - 14px - 1px)'
     }
   }
-})
+});

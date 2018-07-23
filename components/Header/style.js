@@ -8,9 +8,9 @@ import {
   roseColor,
   transition,
   boxShadow, drawerWidth
-} from '../style'
+} from '../style';
 
-const styles = theme => ({
+export default theme => ({
   appBar: {
     display: 'flex',
     border: 0,
@@ -168,6 +168,4 @@ const styles = theme => ({
     marginLeft: 20,
     outline: 0
   }
-})
-
-export default styles
+});
