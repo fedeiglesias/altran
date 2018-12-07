@@ -4,7 +4,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
-    "@zeit/next-css": "^0.2.0",
+    "@zeit/next-css": "latest",
     "axios": "^0.18.0",
     "babel-plugin-inline-react-svg": "^0.5.3",
     "classnames": "^2.2.6",
