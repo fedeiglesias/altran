@@ -7,7 +7,7 @@
 
 * git clone https://github.com/fedeiglesiasc/brastlewark.git
 * cd brastlewark
-* npm run install
+* npm install
 
 
 ---
